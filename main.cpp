@@ -5,23 +5,4 @@ int main()
 {
     cout << "Hello World!" << endl;
     cout << "Наша курсова буде легенарна" << endl;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
 }
