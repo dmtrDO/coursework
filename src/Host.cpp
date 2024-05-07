@@ -93,7 +93,8 @@ int askNumberOfPlayers() {
     return numberOfPlayers;
 }
 
-bool askRestart() {
+bool Host::askRestart()
+{
     bool restartGame;
     char choice;
     do {
