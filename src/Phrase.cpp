@@ -4,6 +4,7 @@
 Phrase::Phrase()
 {
 	lettersGuessed = 0;
+	guessPhrase = false;
 }
 bool Phrase::setPhrase(std::string phrase)
 {
@@ -29,7 +30,7 @@ bool Phrase::setPhrase(std::string phrase)
 			} else {
 				playerViewPhrase[i] = ' ';
 			}
-		} 
+		}
 	}
 	this->phrase = phrase;
 	lettersTotal = phrase.size();
@@ -45,7 +46,7 @@ bool Phrase::setPhrase(std::string phrase)
 }
 bool Phrase::isGuessed()
 {
-	return guessMark;
+	return guessPhrase;
 }
 bool Phrase::guessLetter(char letter)
 {
@@ -59,6 +60,7 @@ bool Phrase::guessLetter(char letter)
 		}
 	}
 	guessMark = startLettersGuessed - lettersGuessed != 0;
+	if (phrase == playerViewPhrase) guessPhrase = true;
 	return guessMark;
 }
 char Phrase::getGuessedLetter()

@@ -15,6 +15,7 @@ private:
 	int lettersGuessed;
 	char letter;
 	bool guessMark;
+    bool guessPhrase;
 public:
     Phrase();
 

@@ -86,6 +86,7 @@ int Host::askNumberOfPlayers()
     {
         std::cout << "Please input the number of players (1 to 4): ";
         std::cin >> numberOfPlayers;
+        std::cin.ignore();
         if (std::cin.fail()) { 
             std::cin.clear();
             std::cin.ignore(10000, '\n');
@@ -120,7 +121,7 @@ bool Host::askRestart()
         }
         std::cin.ignore(10000, '\n'); 
     } while (choice != 'y' && choice != 'n');
-    restartGame = (choice == 'n') ? true : false; 
+    restartGame = (choice == 'n') ? false : true; 
     return restartGame;
 }
 
