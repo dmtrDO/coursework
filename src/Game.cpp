@@ -84,6 +84,9 @@ std::string Game::chooseRandomPhrase()
     
     while(std::getline(file, line))
     { 
+        if (line.back() == '\n') {
+            line.pop_back();
+        }
         phrases.push_back(line);  
     }
 
