@@ -53,7 +53,10 @@ void Game::restart()
 
 
 Game::Game()
-: roundMaker(phrase), statistics(players) {}
+: roundMaker(phrase), statistics(players)
+{
+    srand(time(0));
+}
 
 void Game::start()
 {
@@ -75,7 +78,6 @@ void Game::start()
 }
 std::string Game::chooseRandomPhrase()
 {
-    srand(time(0));
     std::vector<std::string> phrases;
     std::string line;
     std::ifstream file("phrases.txt");
