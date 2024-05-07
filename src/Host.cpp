@@ -47,22 +47,26 @@ void Host::askName()
     }
     name = input;
 }
-int askIfPhraseFromFile() {
+bool Host::askIfPhraseFromFile()
+{
     int gameMode;
-    do {
+    do
+    {
         std::cout << "Who will provide the word: Host (enter 1) or computer (enter 2): ";
         std::cin >> gameMode;
-        if (std::cin.fail()) { 
+        if (std::cin.fail())
+        { 
             std::cin.clear(); 
             std::cin.ignore(10000, '\n'); 
             std::cout << "Invalid input. Please enter a number." << std::endl;
             continue; 
         }
-        if (gameMode != 1 && gameMode != 2) { 
+        if (gameMode != 1 && gameMode != 2)
+        { 
             std::cout << "Invalid input. Please enter 1 or 2." << std::endl;
         }
     } while (gameMode != 1 && gameMode != 2);
-    return gameMode;
+    return (bool)(gameMode - 1);
 }
 
 void Host::askPhrase(Phrase &phrase)
@@ -75,9 +79,11 @@ void Host::askPhrase(Phrase &phrase)
     } while(!phrase.setPhrase(temp));
 }
 
-int askNumberOfPlayers() {
+int Host::askNumberOfPlayers()
+{
     int numberOfPlayers;
-    do {
+    do
+    {
         std::cout << "Please input the number of players (1 to 4): ";
         std::cin >> numberOfPlayers;
         if (std::cin.fail()) { 
@@ -97,16 +103,19 @@ bool Host::askRestart()
 {
     bool restartGame;
     char choice;
-    do {
+    do
+    {
         std::cout << "Do you want to restart the game? (y/n): ";
         std::cin >> choice;
-        if (std::cin.fail()) { 
+        if (std::cin.fail())
+        { 
             std::cin.clear(); 
             std::cin.ignore(10000, '\n'); 
             std::cout << "Invalid input. Please enter a character." << std::endl;
             continue; 
         }
-        if (choice != 'y' && choice != 'n') { 
+        if (choice != 'y' && choice != 'n')
+        { 
             std::cout << "Invalid input. Please enter 'y' or 'n'." << std::endl;
         }
         std::cin.ignore(10000, '\n'); 
