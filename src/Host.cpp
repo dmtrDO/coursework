@@ -70,7 +70,7 @@ void Host::askPhrase(Phrase &phrase)
     std::string temp;
     do
     {
-        std::cout << "Введіть фразу: ";
+        std::cout << "Enter phrase: ";
         std::getline(std::cin, temp);
     } while(!phrase.setPhrase(temp));
 }
