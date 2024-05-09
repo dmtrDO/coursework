@@ -10,14 +10,14 @@ Round RoundMaker::makeRound(Player &actingPlayer)
 
     std::cout << "It's " << actingPlayer.getView() << "'s turn!" << std::endl;
     std::cout << "Phrase: " << phrase.getPlayerView() << std::endl;
+    Phrase phraseState = phrase;
     char letterGuess = actingPlayer.askLetter();
     char trueLetter = phrase.getGuessedLetter();
     bool isGuessed = phrase.guessLetter(letterGuess);
-    Phrase phraseState = phrase;
 
     timer.stop();
 
-    std::cout << actingPlayer.getView() << " thinks the letter is '" << letterGuess << "!" << std::endl;
+    std::cout << actingPlayer.getView() << " thinks the letter is '" << letterGuess << "'!" << std::endl;
     if (isGuessed)
     {
         actingPlayer.setScore(actingPlayer.getScore() + 1);
