@@ -54,7 +54,11 @@ std::string Statistics::getView()
         totalTimeSpent += rounds[i].getTimeSpent();
     }
 
-    view += std::string(5, '-') + " Game lasted for " + std::to_string(totalTimeSpent) + " seconds " + std::string(10, '-') + "\n";
+    std::stringstream sstream;
+    sstream.setf(std::ios::fixed);
+    sstream.precision(2);
+    sstream << totalTimeSpent;
+    view += std::string(5, '-') + " Game lasted for " + sstream.str() + " seconds " + std::string(10, '-') + "\n";
     view += std::string(5, '-') + " Ratings " + std::string(10, '-') + "\n";
     for (int i = 0; i < places.size(); i++)
     {

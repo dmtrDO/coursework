@@ -1,5 +1,8 @@
 #ifndef ROUND_HPP
 #define ROUND_HPP
+#include <string>
+#include <sstream>
+
 #include "Player.hpp"
 #include "Phrase.hpp"
 
