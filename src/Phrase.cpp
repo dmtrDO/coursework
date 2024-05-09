@@ -60,7 +60,7 @@ bool Phrase::guessLetter(char letter)
 			playerViewPhrase[i] = letter;
 		}
 	}
-	guessMark = startLettersGuessed - lettersGuessed != 0;
+	bool guessMark = startLettersGuessed - lettersGuessed != 0;
 	if (phrase == playerViewPhrase) guessPhrase = true;
 	return guessMark;
 }
