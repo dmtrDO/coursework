@@ -51,17 +51,15 @@ bool Phrase::isGuessed()
 }
 bool Phrase::guessLetter(char letter)
 {
-	int startLettersGuessed = lettersGuessed;
-	for (size_t i = 0; i < phrase.size(); i++)
-	{
-		if (phrase[i] == letter) {
-			lettersGuessed++;
-			this->letter = letter;
-			playerViewPhrase[i] = letter;
-		}
+	guessMark = false;
+	if (phrase[lettersGuessed] == ' ') lettersGuessed++;
+	if (tolower(phrase[lettersGuessed]) == tolower(letter)) {
+		playerViewPhrase[lettersGuessed] = letter;
+		lettersGuessed++;
+		this->letter = letter;
+		guessMark = true;
 	}
-	guessMark = startLettersGuessed - lettersGuessed != 0;
-	if (phrase == playerViewPhrase) guessPhrase = true;
+	if (lettersGuessed == lettersTotal) guessPhrase = true;
 	return guessMark;
 }
 char Phrase::getGuessedLetter()
