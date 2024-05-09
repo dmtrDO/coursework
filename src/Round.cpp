@@ -18,7 +18,7 @@ std::string Round::getView()
 {
     std::string view = "Current phrase state: " + phraseState.getPlayerView() + "\n"
         + "Time spent: " + std::to_string(timeSpent) + " seconds\n"
-        + "Acting player: " + actingPlayer.getView() + "\n"
+        + "Acting player: " + actingPlayer.getName() + "\n"
         + actingPlayer.getName() + "'s guess was '" + letterGuess + "'\n";
 
     if (isGuessed())

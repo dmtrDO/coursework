@@ -73,7 +73,8 @@ bool Host::askIfPhraseFromFile()
 void Host::askPhrase(Phrase &phrase)
 {
     std::string temp;
-    std::cout << "Rule: The phrase must be from 10 to 40 letters,"<< '\n' << " only spaces and alphabetic characters are allowed.";
+   // std::cout << "Rule:\nThe phrase must be from 10 to 40 letters," << '\n' << "only spaces and alphabetic characters are allowed.\n";
+    std::cout << "Rule: only spaces and alphabetic characters are allowed (10 - 40 letters)\n";
     std::cout << "Enter phrase: ";
     std::getline(std::cin, temp);
     if(!phrase.setPhrase(temp)){
