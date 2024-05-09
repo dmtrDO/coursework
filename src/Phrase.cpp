@@ -8,7 +8,7 @@ Phrase::Phrase()
 }
 bool Phrase::setPhrase(std::string phrase)
 {
-	guessPhrase = false;
+	bool guessPhrase = false;
 	if (phrase.size() < MIN_PHRASE_SIZE)
 	{
 		return false;
