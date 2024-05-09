@@ -1,7 +1,6 @@
 #include "Host.hpp"
 
 
-
 void Host::askName()
 {
     std::string input;
@@ -69,14 +68,14 @@ bool Host::askIfPhraseFromFile()
     } while (gameMode != 1 && gameMode != 2);
     return (bool)(gameMode - 1);
 }
-
 void Host::askPhrase(Phrase &phrase)
 {
     std::string temp;
     std::cout << "Rule: only spaces and alphabetic characters are allowed (10 - 40 letters)\n";
     std::cout << "Enter phrase: ";
     std::getline(std::cin, temp);
-    if(!phrase.setPhrase(temp)){
+    if(!phrase.setPhrase(temp))
+    {
         do
         {
             std::cout << "Review the rules and enter the correct phrase: ";
@@ -84,22 +83,6 @@ void Host::askPhrase(Phrase &phrase)
         } while(!phrase.setPhrase(temp));
     }
 }
-
-void Host::askPhrase(Phrase &phrase)
-{
-    std::string temp;
-    std::cout << "Rule: The phrase must be from 10 to 40 letters,"<< '\n' << " only spaces and alphabetic characters are allowed.";
-    std::cout << "Enter phrase: ";
-    std::getline(std::cin, temp);
-    if(!phrase.setPhrase(temp)){
-        do
-        {
-            std::cout << "Review the rules and enter the correct phrase: ";
-            std::getline(std::cin, temp);   
-        } while(!phrase.setPhrase(temp));
-    }
-}
-
 int Host::askNumberOfPlayers()
 {
     int numberOfPlayers;
@@ -108,13 +91,15 @@ int Host::askNumberOfPlayers()
         std::cout << "Please input the number of players (1 to 4): ";
         std::cin >> numberOfPlayers;
         std::cin.ignore(10000, '\n');
-        if (std::cin.fail()) { 
+        if (std::cin.fail())
+        { 
             std::cin.clear();
             std::cin.ignore(10000, '\n');
             std::cout << "Invalid input. Please enter a number." << std::endl;
             continue;
         }
-        if (numberOfPlayers < 1 || numberOfPlayers > 4) { 
+        if (numberOfPlayers < 1 || numberOfPlayers > 4)
+        { 
             std::cout << "Invalid input. Please enter a number between 1 and 4." << std::endl;
         }
     } while (numberOfPlayers < 1 || numberOfPlayers > 4);
@@ -145,7 +130,6 @@ bool Host::askRestart()
     restartGame = (choice == 'n') ? false : true; 
     return restartGame;
 }
-
 std::string Host::getName() const
 {
     return name;
