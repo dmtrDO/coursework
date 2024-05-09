@@ -76,6 +76,7 @@ void Game::start()
         }
     }
 }
+
 std::string Game::chooseRandomPhrase()
 {
     std::ifstream file("phrases.txt");
@@ -85,8 +86,16 @@ std::string Game::chooseRandomPhrase()
     }
     std::vector<std::string> phrases;
     std::string line;
-    while (std::getline(file, line, ',')) {
-        phrases.push_back(line);
+    char ch;
+    while (file.get(ch)) {
+        if (ch == '\n') {
+            phrases.push_back(line);
+            line.erase();
+            continue;
+        }
+        if (isalpha(ch) || ch == ' ') {
+            line += ch;
+        }
     }
     file.close();
     return phrases[rand() % phrases.size()];
