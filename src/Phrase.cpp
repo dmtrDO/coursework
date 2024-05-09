@@ -8,8 +8,14 @@ Phrase::Phrase()
 }
 bool Phrase::setPhrase(std::string phrase)
 {
+	letter = phrase[0];
+	lettersGuessed = 0;
 	guessPhrase = false;
 	if (phrase.size() < MIN_PHRASE_SIZE)
+	{
+		return false;
+	}
+	if (phrase.size() > MAX_PHRASE_SIZE)
 	{
 		return false;
 	}
@@ -51,14 +57,13 @@ bool Phrase::isGuessed()
 }
 bool Phrase::guessLetter(char letter)
 {
-	int startLettersGuessed = lettersGuessed;
-	for (size_t i = 0; i < phrase.size(); i++)
-	{
-		if (phrase[i] == letter) {
-			lettersGuessed++;
-			this->letter = letter;
-			playerViewPhrase[i] = letter;
-		}
+	guessMark = false;
+	if (phrase[lettersGuessed] == ' ') lettersGuessed++;
+	if (tolower(phrase[lettersGuessed]) == tolower(letter)) {
+		playerViewPhrase[lettersGuessed] = letter;
+		lettersGuessed++;
+		this->letter = phrase[lettersGuessed];
+		guessMark = true;
 	}
 	bool guessMark = startLettersGuessed - lettersGuessed != 0;
 	if (phrase == playerViewPhrase) guessPhrase = true;

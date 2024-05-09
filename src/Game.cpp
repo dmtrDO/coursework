@@ -78,17 +78,16 @@ void Game::start()
 }
 std::string Game::chooseRandomPhrase()
 {
+    std::ifstream file("phrases.txt");
+    if (!file.is_open()) {
+        std::cerr << "Failed to open file" << std::endl;
+        exit(1);
+    }
     std::vector<std::string> phrases;
     std::string line;
-    std::ifstream file("phrases.txt");
-    
-    while(std::getline(file, line))
-    { 
-        if (line.back() == '\n') {
-            line.pop_back();
-        }
-        phrases.push_back(line);  
+    while (std::getline(file, line, ',')) {
+        phrases.push_back(line);
     }
-
+    file.close();
     return phrases[rand() % phrases.size()];
 }

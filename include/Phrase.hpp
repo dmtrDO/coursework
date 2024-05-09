@@ -4,6 +4,7 @@
 
 
 #define MIN_PHRASE_SIZE 10
+#define MAX_PHRASE_SIZE 40
 
 
 class Phrase
