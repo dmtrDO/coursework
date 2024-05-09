@@ -54,11 +54,11 @@ bool Host::askIfPhraseFromFile()
     {
         std::cout << "Who will provide the word: Host (enter 1) or computer (enter 2): ";
         std::cin >> gameMode;
-        std::cin.ignore();
+        std::cin.ignore(10000, '\n');
         if (std::cin.fail())
         { 
             std::cin.clear(); 
-            std::cin.ignore(); 
+            std::cin.ignore(10000, '\n'); 
             std::cout << "Invalid input. Please enter a number." << std::endl;
             continue; 
         }
@@ -87,10 +87,10 @@ int Host::askNumberOfPlayers()
     {
         std::cout << "Please input the number of players (1 to 4): ";
         std::cin >> numberOfPlayers;
-        std::cin.ignore();
+        std::cin.ignore(10000, '\n');
         if (std::cin.fail()) { 
             std::cin.clear();
-            std::cin.ignore();
+            std::cin.ignore(10000, '\n');
             std::cout << "Invalid input. Please enter a number." << std::endl;
             continue;
         }
@@ -112,7 +112,7 @@ bool Host::askRestart()
         if (std::cin.fail())
         { 
             std::cin.clear(); 
-            std::cin.ignore(); 
+            std::cin.ignore(10000, '\n'); 
             std::cout << "Invalid input. Please enter a character." << std::endl;
             continue; 
         }
@@ -120,7 +120,7 @@ bool Host::askRestart()
         { 
             std::cout << "Invalid input. Please enter 'y' or 'n'." << std::endl;
         }
-        std::cin.ignore(); 
+        std::cin.ignore(10000, '\n'); 
     } while (choice != 'y' && choice != 'n');
     restartGame = (choice == 'n') ? false : true; 
     return restartGame;
