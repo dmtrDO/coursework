@@ -8,7 +8,7 @@ Phrase::Phrase()
 }
 bool Phrase::setPhrase(std::string phrase)
 {
-	bool guessPhrase = false;
+	guessPhrase = false;
 	if (phrase.size() < MIN_PHRASE_SIZE)
 	{
 		return false;
@@ -60,7 +60,7 @@ bool Phrase::guessLetter(char letter)
 			playerViewPhrase[i] = letter;
 		}
 	}
-	guessMark = startLettersGuessed - lettersGuessed != 0;
+	bool guessMark = startLettersGuessed - lettersGuessed != 0;
 	if (phrase == playerViewPhrase) guessPhrase = true;
 	return guessMark;
 }
