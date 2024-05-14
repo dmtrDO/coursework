@@ -47,7 +47,7 @@ std::string Statistics::getView()
     double totalTimeSpent = 0;
 
     std::string view = std::string(5, '-') + " Results " + std::string(10, '-') + "\n";
-    for (int i = 0; i < rounds.size(); i++)
+    for (size_t i = 0; i < rounds.size(); i++)
     {
         view += std::string(2, '-') + " Round " + std::to_string(i + 1) + " " + std::string(5, '-') + "\n";
         view += rounds[i].getView() + "\n";
@@ -60,7 +60,7 @@ std::string Statistics::getView()
     sstream << totalTimeSpent;
     view += std::string(5, '-') + " Game lasted for " + sstream.str() + " seconds " + std::string(10, '-') + "\n";
     view += std::string(5, '-') + " Ratings " + std::string(10, '-') + "\n";
-    for (int i = 0; i < places.size(); i++)
+    for (size_t i = 0; i < places.size(); i++)
     {
         view += std::to_string(places[i].first) + ". " + places[i].second.getView();
         if (i != places.size() - 1)
