@@ -19,7 +19,7 @@ public:
     Round(Player &actingPlayer, double timeSpent, char letterGuess, char trueLetter, Phrase phraseState);
 
     bool isGuessed();
-    std::string getView();
+    std::string toString();
     double getTimeSpent();
 };
 #endif
