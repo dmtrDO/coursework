@@ -64,13 +64,13 @@ bool Phrase::guessLetter(char letter)
 {
 	letter = tolower(letter);
 	int startLettersGuessed = lettersGuessed;
-	if (phrase[lettersGuessed] == ' ') lettersGuessed++;
 	if (phrase[lettersGuessed] == letter)
 	{
 		playerViewPhrase[lettersGuessed] = letter;
 		lettersGuessed++;
-		this->letter = phrase[lettersGuessed];
 	}
+	if (phrase[lettersGuessed] == ' ') lettersGuessed++;
+	this->letter = phrase[lettersGuessed];
 	bool guessMark = startLettersGuessed - lettersGuessed != 0;
 	if (phrase == playerViewPhrase) guessPhrase = true;
 	return guessMark;
