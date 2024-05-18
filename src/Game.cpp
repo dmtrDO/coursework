@@ -41,7 +41,7 @@ void Game::play()
     }
 
 
-    std::cout << phrase.getPlayerView() << std::endl;
+    std::cout << phrase.toPlayerString() << std::endl;
     std::cout << "The phrase is guessed, it's time for results!" << std::endl;
     std::cout << statistics.getView() << std::endl;
 }
