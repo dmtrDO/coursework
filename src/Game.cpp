@@ -20,7 +20,13 @@ void Game::play()
     bool isFromFile = host.askIfPhraseFromFile();
     if (isFromFile)
     {
-        phrase.setPhrase(chooseRandomPhrase());
+        try 
+        {
+            phrase.setPhrase(chooseRandomPhrase());
+        } catch (int num) 
+        {
+            std::cout << "\nUnexpected error: " << num << " strings in file\n";
+        }
     }
     else
     {
@@ -98,5 +104,8 @@ std::string Game::chooseRandomPhrase()
         }
     }
     file.close();
+    if (phrases.size() == 0) {
+        throw 0;
+    }
     return phrases[rand() % phrases.size()];
 }
