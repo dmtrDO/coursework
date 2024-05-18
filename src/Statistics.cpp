@@ -41,7 +41,7 @@ std::vector<std::pair<int, Player>> Statistics::getPlaces()
 
     return rankedPlayers;
 }
-std::string Statistics::getView()
+std::string Statistics::toString()
 {
     std::vector<std::pair<int, Player>> places = getPlaces();
     double totalTimeSpent = 0;
@@ -51,7 +51,7 @@ std::string Statistics::getView()
     {
         view += '\n';
         view += std::string(15, '-') + " Round " + std::to_string(i + 1) + " " + std::string(15, '-') + "\n";
-        view += rounds[i].getView() + "\n";
+        view += rounds[i].toString() + "\n";
         totalTimeSpent += rounds[i].getTimeSpent();
     }
 

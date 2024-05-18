@@ -14,7 +14,7 @@ bool Round::isGuessed()
 {
     return tolower(letterGuess) == tolower(trueLetter);
 }
-std::string Round::getView()
+std::string Round::toString()
 {
     std::stringstream sstream;
     sstream.setf(std::ios::fixed);

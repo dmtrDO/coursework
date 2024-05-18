@@ -18,6 +18,6 @@ public:
     void reset();
     void addRound(const Round& round);
     std::vector<std::pair<int, Player>> getPlaces();
-    std::string getView();
+    std::string toString();
 };
 #endif
