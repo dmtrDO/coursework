@@ -20,7 +20,7 @@ std::string Round::getView()
     sstream.setf(std::ios::fixed);
     sstream.precision(2);
     sstream << timeSpent;
-    std::string view = "Current phrase state: " + phraseState.getPlayerView() + "\n"
+    std::string view = "Current phrase state: " + phraseState.toPlayerString() + "\n"
         + "Time spent: " + sstream.str() + " seconds\n"
         + "Acting player: " + actingPlayer.getName() + "\n"
         + actingPlayer.getName() + "'s guess was '" + letterGuess + "'\n";

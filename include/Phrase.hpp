@@ -23,7 +23,6 @@ public:
     bool isGuessed();
     bool guessLetter(char letter);
     char getGuessedLetter();
-    std::string getPlayerView();
-    std::string getView();
+    std::string toPlayerString();
 };
 #endif

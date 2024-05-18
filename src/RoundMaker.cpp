@@ -37,7 +37,7 @@ Round RoundMaker::makeRound(Player &actingPlayer)
     timer.start();
 
     std::cout << "\nIt's " << actingPlayer.getName() << "'s turn!" << std::endl;
-    std::cout << "Phrase: " << phrase.getPlayerView() << std::endl;
+    std::cout << "Phrase: " << phrase.toPlayerString() << std::endl;
     Phrase phraseState = phrase;
     char letterGuess = askLetter();
     char trueLetter = phrase.getGuessedLetter();

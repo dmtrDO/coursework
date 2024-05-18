@@ -83,7 +83,3 @@ std::string Phrase::toPlayerString()
 {
 	return playerViewPhrase;
 }
-std::string Phrase::toString()
-{
-	return phrase;
-}
