@@ -79,11 +79,11 @@ char Phrase::getGuessedLetter()
 {
 	return letter;
 }
-std::string Phrase::getPlayerView()
+std::string Phrase::toPlayerString()
 {
 	return playerViewPhrase;
 }
-std::string Phrase::getView()
+std::string Phrase::toString()
 {
 	return phrase;
 }
