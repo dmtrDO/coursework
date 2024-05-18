@@ -88,34 +88,6 @@ void Player::askAge()
 	}
 	age = stoi(input);
 }
-char Player::askLetter() const
-{
-	std::string input;
-	bool mark = true;
-	while (mark)
-	{
-		mark = false;
-		std::cout << "Enter a character: ";
-		std::getline(std::cin, input);
-		if (input.empty() || input.size() > 1 || !isalpha(input.front()))
-		{
-			if (input.empty())
-			{
-				std::cout << "Error: You haven't entered anything.\n";
-			}
-			else if (input.size() > 1)
-			{
-				std::cout << "Error: You have entered more than one character.\n";
-			} 
-			else
-			{
-				std::cout << "Error: You have entered a non-alphabetic character.\n";
-			}
-			mark = true;
-		}
-	}
-	return input.front();
-}
 void Player::addScore()
 {
 	this->score += 1;

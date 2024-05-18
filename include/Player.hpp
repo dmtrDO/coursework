@@ -18,7 +18,6 @@ public:
 
     void askName();
     void askAge();
-    char askLetter() const;
     void addScore();
     std::string getName() const;
     int getAge() const;
