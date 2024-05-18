@@ -12,6 +12,7 @@ private:
     Phrase &phrase;
     Timer timer;
 public:
+    char askLetter();
     RoundMaker(Phrase &phrase);
 
     Round makeRound(Player &actingPlayer);
