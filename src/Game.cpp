@@ -26,7 +26,7 @@ void Game::play()
     {
         host.askPhrase(phrase);
     }
-    std::cout << "Let The Field of Wonders begin!" << std::endl;
+    std::cout << "\nLet The Field of Wonders begin!" << std::endl;
 
     while (!phrase.isGuessed())
     {

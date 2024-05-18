@@ -20,8 +20,7 @@ Round RoundMaker::makeRound(Player &actingPlayer)
     std::cout << actingPlayer.getName() << " thinks the letter is '" << letterGuess << "'!" << std::endl;
     if (isGuessed)
     {
-        actingPlayer.setScore(actingPlayer.getScore() + 1);
-
+        actingPlayer.addScore();
         std::cout << actingPlayer.getName() << "'s guess was right!" << std::endl;
     }
     else

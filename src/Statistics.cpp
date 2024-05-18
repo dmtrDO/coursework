@@ -46,10 +46,11 @@ std::string Statistics::getView()
     std::vector<std::pair<int, Player>> places = getPlaces();
     double totalTimeSpent = 0;
 
-    std::string view = std::string(5, '-') + " Results " + std::string(10, '-') + "\n";
+    std::string view = '\n' + std::string(15, '-') + " Results " + std::string(15, '-') + "\n";
     for (size_t i = 0; i < rounds.size(); i++)
     {
-        view += std::string(2, '-') + " Round " + std::to_string(i + 1) + " " + std::string(5, '-') + "\n";
+        view += '\n';
+        view += std::string(15, '-') + " Round " + std::to_string(i + 1) + " " + std::string(15, '-') + "\n";
         view += rounds[i].getView() + "\n";
         totalTimeSpent += rounds[i].getTimeSpent();
     }
@@ -58,11 +59,12 @@ std::string Statistics::getView()
     sstream.setf(std::ios::fixed);
     sstream.precision(2);
     sstream << totalTimeSpent;
-    view += std::string(5, '-') + " Game lasted for " + sstream.str() + " seconds " + std::string(10, '-') + "\n";
-    view += std::string(5, '-') + " Ratings " + std::string(10, '-') + "\n";
+    view += '\n';
+    view += std::string(5, '-') + " Game lasted for " + sstream.str() + " seconds " + std::string(5, '-') + "\n";
+    view += std::string(15, '-') + " Ratings " + std::string(15, '-') + "\n";
     for (size_t i = 0; i < places.size(); i++)
     {
-        view += std::to_string(places[i].first) + ". " + places[i].second.getView();
+        view += std::to_string(places[i].first) + ". " + places[i].second.toString();
         if (i != places.size() - 1)
         {
             view += "\n";

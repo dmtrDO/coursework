@@ -19,10 +19,10 @@ public:
     void askName();
     void askAge();
     char askLetter() const;
-    void setScore(int score);
+    void addScore();
     std::string getName() const;
     int getAge() const;
     int getScore() const;
-    std::string getView() const;
+    std::string toString() const;
 };
 #endif

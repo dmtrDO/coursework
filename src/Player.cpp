@@ -116,9 +116,9 @@ char Player::askLetter() const
 	}
 	return input.front();
 }
-void Player::setScore(int score)
+void Player::addScore()
 {
-	this->score = score;
+	this->score += 1;
 }
 int Player::getAge() const
 {
@@ -132,7 +132,7 @@ int Player::getScore() const
 {
 	return score;
 }
-std::string Player::getView() const
+std::string Player::toString() const
 {
 	return name + ", " + std::to_string(age) + "y.o., score: " + std::to_string(score);
 }
