@@ -112,7 +112,7 @@ bool Host::askRestart()
     char choice;
     do
     {
-        std::cout << "Do you want to restart the game? (y/n): ";
+        std::cout << "\nDo you want to restart the game? (y/n): ";
         std::cin >> choice;
         if (std::cin.fail())
         { 
