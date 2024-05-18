@@ -61,7 +61,7 @@ std::string Statistics::getView()
     sstream << totalTimeSpent;
     view += '\n';
     view += std::string(5, '-') + " Game lasted for " + sstream.str() + " seconds " + std::string(5, '-') + "\n";
-    view += std::string(15, '-') + " Ratings " + std::string(15, '-') + "\n";
+    view += std::string(16, '-') + " Ratings " + std::string(15, '-') + "\n";
     for (size_t i = 0; i < places.size(); i++)
     {
         view += std::to_string(places[i].first) + ". " + places[i].second.toString();
