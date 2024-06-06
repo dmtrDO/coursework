@@ -14,15 +14,7 @@ bool Phrase::setPhrase(std::string phrase)
 	letter = phrase[0];
 	lettersGuessed = 0;
 	guessPhrase = false;
-	if (phrase.size() < MIN_PHRASE_SIZE)
-	{
-		return false;
-	}
-	if (phrase.size() > MAX_PHRASE_SIZE)
-	{
-		return false;
-	}
-	if (!isalpha(phrase.front()) || !isalpha(phrase.back()))
+	if (phrase.size() < MIN_PHRASE_SIZE || phrase.size() > MAX_PHRASE_SIZE || !isalpha(phrase.front()) || !isalpha(phrase.back()))
 	{
 		return false;
 	}
@@ -37,10 +29,6 @@ bool Phrase::setPhrase(std::string phrase)
 			if (!isalpha(phrase[i - 1]) || !isalpha(phrase[i + 1]))
 			{
 				return false;
-			}
-			else
-			{
-				playerViewPhrase[i] = ' ';
 			}
 		}
 	}
