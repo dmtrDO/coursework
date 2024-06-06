@@ -1,6 +1,5 @@
 #include "Phrase.hpp"
 
-
 Phrase::Phrase()
 {
 	lettersGuessed = 0;
