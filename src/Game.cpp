@@ -22,10 +22,20 @@ void Game::play()
     {
         try 
         {
-            phrase.setPhrase(chooseRandomPhrase());
+            if (!phrase.setPhrase(chooseRandomPhrase())) 
+            {
+                throw 1;
+            }
         } catch (int num) 
         {
-            std::cout << "\nUnexpected error: " << 0 << " correct strings in file\n\n";
+            if (num == 0)
+            {
+                std::cout << "\nUnexpected error: " << 0 << " correct strings in file\n\n";
+            }
+            else 
+            {
+                std::cout << "\nUnexpected error: incorrect string in file\n\n";
+            }
             std::cout << "In this case, the host will be the one to guess the phrase\n";
             host.askPhrase(phrase);
         }
@@ -114,12 +124,5 @@ std::string Game::chooseRandomPhrase()
     {
         throw 0;
     } 
-    else 
-    {
-        for (size_t i = 0; i < phrases.size(); i++) 
-        {
-            if (phrases[i].empty() || phrases[i].size() < 10 || phrases[i].size() > 40) throw 0;
-        }
-    }
     return phrases[rand() % phrases.size()];
 }
