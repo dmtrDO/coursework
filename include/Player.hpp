@@ -2,6 +2,7 @@
 #define PLAYER_HPP
 #include <iostream>
 #include <string>
+#include <cctype>
 
 
 #define MAX_NAME_SIZE 40

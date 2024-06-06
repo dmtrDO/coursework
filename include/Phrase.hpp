@@ -1,6 +1,7 @@
 #ifndef PHRASE_HPP
 #define PHRASE_HPP
 #include <string>
+#include <cctype>
 
 
 #define MIN_PHRASE_SIZE 10
