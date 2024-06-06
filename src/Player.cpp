@@ -15,7 +15,7 @@ void Player::askName()
 	{
 		mark = false;
 		std::cout << "Enter name: ";
-		getline(std::cin, input);
+		std::getline(std::cin, input);
 		if (input.empty() || input.size() == 1 || input.size() > MAX_NAME_SIZE)
 		{
 			if (input.empty())
@@ -60,7 +60,7 @@ void Player::askAge()
 	{
 		mark = false;
 		std::cout << "Enter age: ";
-		getline(std::cin, input);
+		std::getline(std::cin, input);
 		if (input.empty() || input.size() > 3 || input.find_first_not_of("0123456789") != std::string::npos || input.front() == '0' || stoi(input) > 130)
 		{
 			if (input.empty())
