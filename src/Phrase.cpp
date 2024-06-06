@@ -59,9 +59,8 @@ bool Phrase::guessLetter(char letter)
 	}
 	if (phrase[lettersGuessed] == ' ') lettersGuessed++;
 	this->letter = phrase[lettersGuessed];
-	bool guessMark = startLettersGuessed - lettersGuessed != 0;
 	if (phrase == playerViewPhrase) guessPhrase = true;
-	return guessMark;
+	return startLettersGuessed - lettersGuessed != 0;
 }
 char Phrase::getGuessedLetter()
 {
