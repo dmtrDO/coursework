@@ -51,7 +51,7 @@ bool Host::askIfPhraseFromFile()
     int gameMode;
     do
     {
-        std::cout << "Who will provide the word: Host (enter 1) or computer (enter 2): ";
+        std::cout << "Who will provide the phrase: " << name << " (enter 1) or computer (enter 2): ";
         std::cin >> gameMode;
         std::cin.ignore();
         if (std::cin.fail())
